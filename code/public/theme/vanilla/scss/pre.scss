@@ -1,0 +1,30 @@
+// === Vanilla — переменные Bootstrap (тёплая ванильная палитра, tech/SaaS) ===
+// Этот файл подмешивается ПЕРЕД основой Boost, поэтому переопределяет
+// дефолтные переменные ($... !default) во всём Bootstrap/Moodle.
+
+// Акцент — тёплый карамельный
+$primary:   #c97b3c;
+$secondary: #8a7d6b;
+$success:   #4f9d69;
+$info:      #5b8fb0;
+$warning:   #e0a85e;
+$danger:    #d05b4f;
+
+// Фон и текст — ванильный крем / тёплый тёмно-коричневый
+$body-bg:    #faf6ef;
+$body-color: #2a2521;
+
+// Типографика
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+$headings-font-weight: 700;
+$font-weight-bold: 700;
+
+// Скругления — мягкие, в духе современных SaaS
+$border-radius:    .65rem;
+$border-radius-sm: .45rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.25rem;
+
+// Ссылки
+$link-decoration: none;
+$link-hover-decoration: underline;

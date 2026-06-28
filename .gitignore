@@ -1,0 +1,32 @@
+# Local runtime data and caches.
+/moodledata/
+**/node_modules/
+**/.cache/
+*.log
+*.tmp
+
+# Local Moodle configuration with database credentials.
+/code/config.php
+/code/public/config.php
+/code.old-510/config.php
+/code.old-510/public/config.php
+
+# Local git metadata moved out of nested checkouts before creating this repo.
+/.git-backups/
+
+# Local secrets and environment files.
+.env
+.env.*
+/tok.txt
+/token.txt
+/secrets/
+
+# Large/restored artifacts that duplicate tracked source or runtime state.
+/moodle_db.sql
+/moodle_code.tar.gz
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

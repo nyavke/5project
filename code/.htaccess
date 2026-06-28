@@ -1,0 +1,35 @@
+# Запретить прямой доступ к чувствительным файлам
+<FilesMatch "\.(env|log|ini|dist|yml|yaml|md|sh|sql|sqlite|db|DS_Store)$">
+    Require all denied
+</FilesMatch>
+
+# Разрешить доступ к файлам подтверждения домена (Яндекс, Google и др.)
+<FilesMatch "^yandex_[a-z0-9]+\.html$">
+    Require all granted
+</FilesMatch>
+
+# Включить mod_rewrite (если доступен)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Разрешить прямой доступ к файлам верификации (игнорировать перенаправление в index.php)
+    RewriteRule ^yandex_[a-z0-9]+\.html$ - [L]
+
+    # Стандартные правила Moodle
+    RewriteRule ^pluginfile\.php$ - [L]
+    RewriteRule ^lib/ajax/service.php$ - [L]
+    RewriteRule ^lib/cssconfig.php$ - [L]
+    RewriteRule ^lib/fonts/index.php$ - [L]
+    RewriteRule ^lib/javascript.php$ - [L]
+    RewriteRule ^theme/yui_combo\.php$ - [L]
+    RewriteRule ^theme/image.php$ - [L]
+    RewriteRule ^theme/styles\.php$ - [L]
+
+    # Все остальные запросы — в index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?file=$1 [QSA,L]
+</IfModule>
+
+# Запретить индексацию содержимого папок
+Options -Indexes

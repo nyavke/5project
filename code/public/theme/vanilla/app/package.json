@@ -1,0 +1,31 @@
+{
+  "name": "theme-vanilla-react",
+  "version": "1.0.0",
+  "description": "React product layer for the Moodle Vanilla theme",
+  "private": true,
+  "main": "src/main.tsx",
+  "scripts": {
+    "build": "esbuild src/main.tsx --bundle --minify --format=iife --global-name=VanillaReactApp --outfile=../javascript/vanilla-react.js --loader:.css=text --jsx=automatic",
+    "materials": "node tools/generate-mvp-materials.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "lucide-react": "^1.21.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "docx": "^9.7.1",
+    "esbuild": "^0.28.1",
+    "jszip": "^3.10.1",
+    "playwright": "^1.61.1",
+    "pptxgenjs": "^4.0.1",
+    "typescript": "^6.0.3"
+  }
+}
