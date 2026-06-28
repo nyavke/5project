@@ -6,8 +6,6 @@
 *.tmp
 
 # Local Moodle configuration with database credentials.
-/code/config.php
-/code/public/config.php
 /code.old-510/config.php
 /code.old-510/public/config.php
 
